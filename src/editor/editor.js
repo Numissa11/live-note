@@ -2,7 +2,6 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import debounce from '../helpers';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
-import { withStyles } from '@material-ui/core/styles';
 
 
 export class Editor extends React.Component {
@@ -32,6 +31,10 @@ export class Editor extends React.Component {
         await this.setState({ text: val })
         this.update()
     }
+
+    update = debounce(() => {
+         console.log('updating database after 1.5 second stop:)')
+    }, 1500)
 }
 
 export default Editor

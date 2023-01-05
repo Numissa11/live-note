@@ -16,14 +16,14 @@
       top: '0';
       right: '5px';
     }
-    .newNoteBtn {
+
+    button .newNotBtn {
       width: '100%';
-      height: '35px';
-      border-Bottom: '1px solid black';
+      height: '50px';
+      border-Bottom: '2px solid black';
       border-Radius: '0px';
-       background-Color: '#29487d';
-      color: 'white';
-      
+      background-Color: 'red';
+      color: '#4582ec !important';
     }
 
     .sidebarContainer {
@@ -32,8 +32,8 @@
       height: '100%';
       box-Sizing: 'border-box';
       float: 'left';
-      over-flowY: 'scroll';
-      over-flowX: 'hidden'
+      overflow-y: 'scroll';
+      overflow-X: 'hidden';
     }
 
     .newNoteInput {

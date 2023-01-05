@@ -21,7 +21,10 @@ export class App extends Component {
   {
     return (
       <div className='app-container'>
-        <Sidebar />
+        <Sidebar 
+        notes={this.state.notes} 
+        selectedNoteIndex={this.state.selectedNoteIndex} 
+        selectedNote={this.state.selectedNote} />
 
         <Editor />
       </div>

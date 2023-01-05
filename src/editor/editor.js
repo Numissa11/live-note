@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import debounce from '../helpers';
-import BorderColorIcon from '@mui/icons-material/BorderColor';
 
 
 export class Editor extends React.Component {

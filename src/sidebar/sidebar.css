@@ -1,55 +1,55 @@
 
     .root {
       background-Color: grgb(166, 200, 166);
-      height: 'calc(100% - 35px)';
-      position: 'absolute';
-      left: '0';
-      width: '300px';
-      box-Shadow: '0px 0px 2px black';
+      height: calc(100% - 35px);
+      position: absolute;
+      left: 0;
+      width: 300px;
+      box-Shadow: 0px 0px 2px black;
     }
     .newChatBtn {
-      border-Radius: '0px';
+      border-Radius: 0px;
     }
     .unreadMessage {
-      color: 'red';
-      position: 'absolute';
-      top: '0';
-      right: '5px';
+      color: red;
+      position: absolute;
+      top: 0;
+      right: 5px;
     }
 
     .newNotBtn {
-      width: '100%';
-      height: '50px';
-      border-Bottom: '2px solid black';
-      border-Radius: '0px';
-      background-Color: 'red';
-      color: '#4582ec !important';
+      width: 20%;
+      height: 35px;
+      border-Bottom: 2px solid black;
+      border-Radius: 0px;
+      background-Color:#29487d;
+      color: white;
     }
 
     .sidebarContainer {
-      margin-Top: '0px';
-      width: '300px';
-      height: '100%';
-      box-Sizing: 'border-box';
-      float: 'left';
-      overflow-y: 'scroll';
-      overflow-X: 'hidden';
+      margin-Top: 0px;
+      width: 300px;
+      height: 100%;
+      box-Sizing: border-box;
+      float: left;
+      overflow-y: scroll;
+      overflow-X: hidden;
     }
 
     .newNoteInput {
-      width: '100%';
-      margin: '0px';
-      height: '35px';
-      outline: 'none';
-      border: 'none';
-      padding-Left: '5px';
+      width: 100%;
+      margin: 0px;
+      height: 35px;
+      outline: none;
+      border: none;
+      padding-Left: 5px;
       
     }
 
     .newNoteSubmitBtn {
-      width: '100%';
-      background-Color: '#28787c';
-      border-Radius: '0px';
-      color: 'white'
+      width: 100%;
+      background-Color: #28787c;
+      border-Radius: 0px;
+      color: white
     }
  

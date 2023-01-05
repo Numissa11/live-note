@@ -1,13 +1,10 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import styles from './styles';
 import List from '@material-ui/core/List';
 import { Divider, Button } from '@material-ui/core';
-import SidebarItemComponent from '../sidebaritem/sidebarItem';
+import SidebarItem from '../sidebarItem/sidebarItem';
 
-import React, { Component } from 'react'
-
-export class Sidebar extends Component {
+export class Sidebar extends React.Component {
     constructor() {
         super()
     }
@@ -18,4 +15,4 @@ export class Sidebar extends Component {
     }
 }
 
-export default withStyles(styles)(Sidebar)
+export default Sidebar

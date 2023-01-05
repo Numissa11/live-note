@@ -1,0 +1,15 @@
+
+    .listItem {
+      cursor: 'pointer';
+    }
+
+    .textSection {
+      max-Width: '85%';
+    }
+
+    .deleteIcon {
+      position: 'absolute';
+      right: '5px';
+      top: 'calc(50% - 15px)';
+      }
+    

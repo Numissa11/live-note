@@ -1,14 +1,11 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import styles from './styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { removeHTMLTags } from '../helpers';
 
-import React, { Component } from 'react'
 
-export class Sidebaritem extends Component {
+export class SidebarItem extends React.Component {
     constructor() {
         super()
     }
@@ -19,4 +16,4 @@ export class Sidebaritem extends Component {
     }
 }
 
-export default withStyles(styles)(Sidebaritem)
+export default SidebarItem

@@ -1,19 +1,30 @@
 import React, { Component } from 'react'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
+import Sidebar from './sidebar/sidebar';
+import Editor from './editor/editor';
 
 export class App extends Component {
-  constructor() {
+
+  constructor() 
+  {
     super()
+
     this.state = {
       selectedNoteIndex: null,
       selectedNote: null,
       notes: null
     }
   }
-  render() {
+
+  render() 
+  {
     return (
-      <div>App</div>
+      <div className='app-container'>
+        <Sidebar />
+
+        <Editor />
+      </div>
     )
   }
 

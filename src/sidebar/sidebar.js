@@ -78,7 +78,7 @@ export class Sidebar extends React.Component {
         // this.setState({ title: null, addingNote: false });
       }
 
-      selectNote = () => console.log('this.props.selectNote(n, i)')
+      selectNote = (n, i) => this.props.selectNote(n, i)
       deleteNote = (note) =>console.log( 'this.props.deleteNote(note)')
 }
 

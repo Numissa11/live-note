@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import debounce from '../helpers';
-
+import './editor.css';
 
 export class Editor extends React.Component {
     constructor() {

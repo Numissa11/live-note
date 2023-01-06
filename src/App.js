@@ -3,6 +3,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import Sidebar from './sidebar/sidebar';
 import Editor from './editor/editor';
+import './App.css';
 
 export class App extends Component {
 
@@ -23,8 +24,10 @@ export class App extends Component {
       <div className='app-container'>
         <Sidebar 
         notes={this.state.notes} 
-        selectedNoteIndex={this.state.selectedNoteIndex} 
-        selectedNote={this.state.selectedNote} />
+        selectedNoteIndex={this.state.selectedNoteIndex}
+        deleteNote={this.deleteNote}
+        selectNote={this.selectNote} 
+        />
         <Editor />
       </div>
     )
@@ -46,6 +49,19 @@ export class App extends Component {
     })
    }
 
+   deleteNote = async (note) => {
+    const noteIndex = this.state.notes.indexOf(note);
+    await this.setState({ notes: this.state.notes.filter(_note => _note !== note) });
+    if(this.state.selectedNoteIndex === noteIndex) {
+      this.setState({ selectedNoteIndex: null, selectedNote: null });
+    } else {
+      this.state.notes.length > 1 ?
+      this.selectNote(this.state.notes[this.state.selectedNoteIndex - 1], this.state.selectedNoteIndex - 1) :
+      this.setState({ selectedNoteIndex: null, selectedNote: null });
+    }
+  }
+  
+   selectNote = (note, index) => this.setState({ selectedNoteIndex: index, selectedNote: note });
 }
 
 export default App

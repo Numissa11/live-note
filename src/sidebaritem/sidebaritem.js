@@ -30,11 +30,18 @@ export class SidebarItem extends React.Component {
                     </div>
 
                 
-                    <BsFillTrashFill className='deleteIcon' fontSize={22} color='#29487d' onClick={() => console.log('this.deleteNote(note)')}
+                    <BsFillTrashFill className='deleteIcon' fontSize={22} color='#29487d' onClick={() => this.deleteNote(note)}
                     ></BsFillTrashFill>
                 </ul>
             </div>
         )
+    }
+
+    selectNote = (n, i) => this.props.selectNote(n, i);
+    deleteNote = (note) => {
+      if(window.confirm(`Are you sure you want to delete: ${note.title}`)) {
+        this.props.deleteNote(note);
+      }
     }
 }
 

@@ -15,6 +15,9 @@
       top: calc(50% - 15px);
       }
 
+      .deleteIcon:hover {
+        background-color: rgb(226, 249, 250);
+      }
       .noteTitle {
         font-weight: bold;
         text-decoration: underline;      }

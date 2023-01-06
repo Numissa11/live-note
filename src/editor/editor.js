@@ -14,10 +14,8 @@ export class Editor extends React.Component {
     }
     render() {
 
-        const { classes } = this.props
-
         return (
-            <div className='classes.editorContainer'>
+            <div className='editorContainer'>
                 <ReactQuill
                     value={this.state.text}
                     onChange={this.updateBody}>
@@ -32,6 +30,7 @@ export class Editor extends React.Component {
     }
 
     update = debounce(() => {
+        // updating database after 1.5 second stop writing
          console.log('updating database after 1.5 second stop:)')
     }, 1500)
 }

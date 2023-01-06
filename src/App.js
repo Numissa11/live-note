@@ -42,7 +42,7 @@ export class App extends Component {
         data['id'] = _doc.id
         return data
       })
-      console.log(notes)
+      console.log('notesss',notes)
       this.setState({ notes: notes })
     })
    }

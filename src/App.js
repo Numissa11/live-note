@@ -25,7 +25,6 @@ export class App extends Component {
         notes={this.state.notes} 
         selectedNoteIndex={this.state.selectedNoteIndex} 
         selectedNote={this.state.selectedNote} />
-
         <Editor />
       </div>
     )
@@ -34,12 +33,12 @@ export class App extends Component {
   componentDidMount = () => { 
     firebase.firestore().collection('notes')
     .onSnapshot(serverUpdate => {
-      const notes = serverUpdate.docs.map(_doc => {
-        const data = _doc.data()
+      const notes = serverUpdate.docs.map(doc => {
+        const data = doc.data()
         // we add a property id to our object : data
-        // data.id === _doc.id
+        // data.id === doc.id
         // on a juste créer une propriété en plus à l'object
-        data['id'] = _doc.id
+        data['id'] = doc.id
         return data
       })
       console.log('notesss',notes)

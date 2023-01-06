@@ -1,6 +1,8 @@
 
     .listItem {
       cursor: pointer;
+      align-items: flex-start;
+      padding-bottom: 15px;
     }
 
     .textSection {
@@ -9,7 +11,11 @@
 
     .deleteIcon {
       position: absolute;
-      right: 5px;
+      right: 15px;
       top: calc(50% - 15px);
       }
+
+      .noteTitle {
+        font-weight: bold;
+        text-decoration: underline;      }
     

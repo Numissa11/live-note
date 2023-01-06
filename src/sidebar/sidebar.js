@@ -13,7 +13,7 @@ export class Sidebar extends React.Component {
         }
     }
     render() {
-        const { notes, classes, selectedNoteIndex } = this.props
+        const { notes, selectedNoteIndex } = this.props
        if (notes) {
         return (
             <div className='sidebarContainer'>
@@ -56,7 +56,9 @@ export class Sidebar extends React.Component {
             </div>
         )
        } else {
-        return(<div></div>)
+        return (
+        <div></div>
+        )
        }
     }
 

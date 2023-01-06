@@ -18,18 +18,20 @@
     }
 
     .newNotBtn {
-      width: 20%;
+      width: 100%;
       height: 35px;
       border-Bottom: 2px solid black;
       border-Radius: 0px;
       background-Color:#29487d;
       color: white;
+      font-weight: bold;
+      font-size: 15px;
     }
 
     .sidebarContainer {
       margin-Top: 0px;
       width: 300px;
-      height: 100%;
+      min-height: 1000px;
       box-Sizing: border-box;
       float: left;
       overflow-y: scroll;

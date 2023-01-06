@@ -2,6 +2,7 @@ import React from 'react';
 import { removeHTMLTags } from '../helpers';
 import { BsFillTrashFill } from "react-icons/bs";
 import './sidebarItem.css';
+import { ListItem } from '@mui/material';
 
 
 export class SidebarItem extends React.Component {
@@ -13,7 +14,7 @@ export class SidebarItem extends React.Component {
         return (
             <div>
 
-                <ul
+                <ListItem
                     className='listItem'
                     selected={selectedNoteIndex === index}
                 >
@@ -21,23 +22,24 @@ export class SidebarItem extends React.Component {
                         className='textSection'
                         onClick={() => this.selectNote(note, index)}>
                     
-                    <li className='noteTitle'>{(note.title).charAt(0).toUpperCase() + (note.title).slice(1)} </li>
+                    <ul className='noteTitle'>{(note.title).charAt(0).toUpperCase() + (note.title).slice(1)} </ul>
 
-                    <li>
+                    <ul>
                         {removeHTMLTags(note.body.substring(0, 30)) + '...'}
-                    </li>
+                    </ul>
 
                     </div>
 
                 
                     <BsFillTrashFill className='deleteIcon' fontSize={22} color='#29487d' onClick={() => this.deleteNote(note)}
                     ></BsFillTrashFill>
-                </ul>
+                </ListItem>
             </div>
         )
     }
 
     selectNote = (n, i) => this.props.selectNote(n, i);
+
     deleteNote = (note) => {
       if(window.confirm(`Are you sure you want to delete: ${note.title}`)) {
         this.props.deleteNote(note);

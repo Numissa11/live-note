@@ -7,71 +7,74 @@ import './App.css';
 
 export class App extends Component {
 
-  constructor() 
-  {
+  constructor() {
     super()
 
     this.state = {
-      selectedNoteIndex: null,
+      notes: null,
       selectedNote: null,
-      notes: null
+      selectedNoteIndex: null
     }
   }
 
-  render() 
-  {
+  render() {
     return (
       <div className='app-container'>
-        <Sidebar 
-        notes={this.state.notes} 
-        selectedNoteIndex={this.state.selectedNoteIndex}
-        deleteNote={this.deleteNote}
-        selectNote={this.selectNote} 
+        <Sidebar
+          notes={this.state.notes}
+          selectedNoteIndex={this.state.selectedNoteIndex}
+          deleteNote={this.deleteNote}
+          selectNote={this.selectNote}
         />
         {
           this.state.selectedNote ?
-          <Editor 
-          selectedNote={this.state.selectedNote}
-          selectedNoteIndex={this.state.selectedNoteIndex}
-          notes={this.state.notes}
-          />
-          :
-          null
+            <Editor
+              selectedNote={this.state.selectedNote}
+              selectedNoteIndex={this.state.selectedNoteIndex}
+              notes={this.state.notes}
+            />
+            :
+            null
         }
-       
+
       </div>
     )
   }
 
-  componentDidMount = () => { 
+  componentDidMount = () => {
     firebase.firestore().collection('notes')
-    .onSnapshot(serverUpdate => {
-      const notes = serverUpdate.docs.map(doc => {
-        const data = doc.data()
-        // we add a property id to our object : data
-        // data.id === doc.id
-        // on a juste créer une propriété en plus à l'object
-        data['id'] = doc.id
-        return data
+      .onSnapshot(serverUpdate => {
+        const notes = serverUpdate.docs.map(doc => {
+          const data = doc.data()
+          // we add a property id to our object : data
+          // data.id === doc.id
+          // on a juste créer une propriété en plus à l'object
+          data['id'] = doc.id
+          return data
+        })
+        console.log('notesss', notes)
+        this.setState({ notes: notes })
       })
-      console.log('notesss',notes)
-      this.setState({ notes: notes })
-    })
-   }
+  }
 
-   deleteNote = async (note) => {
+  deleteNote = async (note) => 
+  {
     const noteIndex = this.state.notes.indexOf(note);
     await this.setState({ notes: this.state.notes.filter(_note => _note !== note) });
-    if(this.state.selectedNoteIndex === noteIndex) {
+
+    if (this.state.selectedNoteIndex === noteIndex) 
+    {
       this.setState({ selectedNoteIndex: null, selectedNote: null });
-    } else {
+    } 
+    else 
+    {
       this.state.notes.length > 1 ?
-      this.selectNote(this.state.notes[this.state.selectedNoteIndex - 1], this.state.selectedNoteIndex - 1) :
-      this.setState({ selectedNoteIndex: null, selectedNote: null });
+        this.selectNote(this.state.notes[this.state.selectedNoteIndex - 1], this.state.selectedNoteIndex - 1) :
+        this.setState({ selectedNoteIndex: null, selectedNote: null });
     }
   }
-  
-   selectNote = (note, index) => this.setState({ selectedNoteIndex: index, selectedNote: note });
+
+  selectNote = (note, index) => this.setState({ selectedNoteIndex: index, selectedNote: note });
 }
 
 export default App

@@ -12,6 +12,28 @@ export class Editor extends React.Component {
             id: ''
         }
     }
+
+    componentDidMount = () => {
+        console.log('state1',this.props)
+        this.setState({
+            text: this.props.selectedNote.body,
+            title: this.props.selectedNote.title,
+            id: this.props.selectedNote.id
+        })
+    }
+
+    componentDidUpdate = () => {
+       if (this.props.selectedNote.id !== this.state.id) {
+        this.setState({
+            text: this.props.selectedNote.body,
+            title: this.props.selectedNote.title,
+            id: this.props.selectedNote.id,
+        })
+        
+       }
+    }
+
+
     render() {
 
         return (
@@ -31,7 +53,7 @@ export class Editor extends React.Component {
 
     update = debounce(() => {
         // updating database after 1.5 second stop writing
-         console.log('updating database after 1.5 second stop:)')
+        console.log('updating database after 1.5 second stop:)')
     }, 1500)
 }
 

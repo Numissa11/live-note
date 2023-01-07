@@ -31,7 +31,7 @@ export class SidebarItem extends React.Component {
                     </div>
 
                 
-                    <BsFillTrashFill  selected={selectedNoteIndex === index} className='deleteIcon' fontSize={22} color='#29487d' onClick={() => this.deleteNote(note)}
+                    <BsFillTrashFill className='deleteIcon' fontSize={22} color='#29487d' onClick={() => this.deleteNote(note)}
                     ></BsFillTrashFill>
                 </ListItem>
             </div>

@@ -63,23 +63,20 @@ export class Sidebar extends React.Component {
     }
 
     newNoteBtnClick = () => {
-        console.log('new note')
         this.setState({ title: null, addingNote: !this.state.addingNote });
     }
 
     updateTitle = (txt) => {
-        console.log('here is my txt:', txt)
         this.setState({ title : txt })
       }
 
       newNote = () => {
-        console.log(this.state)
-        // this.props.newNote(this.state.title);
-        // this.setState({ title: null, addingNote: false });
+        this.props.newNote(this.state.title);
+        this.setState({ title: null, addingNote: false });
       }
 
       selectNote = (n, i) => this.props.selectNote(n, i)
-      deleteNote = (note) =>console.log( 'this.props.deleteNote(note)')
+      deleteNote = (note) => console.log( 'this.props.deleteNote(note)')
 }
 
 export default Sidebar

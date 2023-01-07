@@ -28,7 +28,17 @@ export class App extends Component {
         deleteNote={this.deleteNote}
         selectNote={this.selectNote} 
         />
-        <Editor />
+        {
+          this.state.selectedNote ?
+          <Editor 
+          selectedNote={this.state.selectedNote}
+          selectedNoteIndex={this.state.selectedNoteIndex}
+          notes={this.state.notes}
+          />
+          :
+          null
+        }
+       
       </div>
     )
   }

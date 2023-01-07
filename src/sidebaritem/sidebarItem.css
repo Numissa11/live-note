@@ -4,8 +4,9 @@
     }
 
     .textSection {
-      max-Width: 85%;
-      margin-bottom: 10px;
+      max-Width: 80%;
+      padding-right: 28%;
+      padding-bottom: 8px;
     }
 
     .deleteIcon {

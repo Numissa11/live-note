@@ -76,7 +76,9 @@ export class Sidebar extends React.Component {
       }
 
       selectNote = (n, i) => this.props.selectNote(n, i)
-      deleteNote = (note) => console.log( 'this.props.deleteNote(note)')
+      deleteNote = (note) => {
+        
+      }
 }
 
 export default Sidebar

@@ -23,10 +23,9 @@
     .editIcon {
       position: absolute;
       margin-left: 310px;
-      top: 12px;
+      top: 10px;
       color: white;
-      width: 10;
-      height: 10
+      font-size: 25px;
     }
 
     .editorContainer {

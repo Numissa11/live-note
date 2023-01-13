@@ -120,13 +120,22 @@ export class App extends Component {
     
     if (this.state.selectedNoteIndex === noteIndex) 
     {
+      console.log('selected note')
       this.setState({ selectedNoteIndex: null, selectedNote: null });
     } 
     else 
     {
-      this.state.notes.length > 1 ?
-      this.selectNote(this.state.notes[this.state.selectedNoteIndex - 1], this.state.selectedNoteIndex - 1) :
-      this.setState({ selectedNoteIndex: null, selectedNote: null });
+      if (this.state.notes.length >= 1) 
+      {
+        this.state.selectedNoteIndex < noteIndex ?
+        this.selectNote(this.state.notes[this.state.selectedNoteIndex], this.state.selectedNoteIndex) 
+      :
+        this.selectNote(this.state.notes[this.state.selectedNoteIndex - 1], this.state.selectedNoteIndex - 1)
+      }
+      else
+      {
+        this.setState({ selectedNoteIndex: null, selectedNote: null });
+      }
     }
 
     firebase

@@ -120,7 +120,6 @@ export class App extends Component {
     
     if (this.state.selectedNoteIndex === noteIndex) 
     {
-      console.log('selected note')
       this.setState({ selectedNoteIndex: null, selectedNote: null });
     } 
     else 
